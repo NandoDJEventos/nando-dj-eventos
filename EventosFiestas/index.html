@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NandoDJEventos - Pista Disco</title>
+  <style>
+    @keyframes discoText {
+      0%   { color: #ff4081; }
+      20%  { color: #ffeb3b; }
+      40%  { color: #00e5ff; }
+      60%  { color: #76ff03; }
+      80%  { color: #ff9100; }
+      100% { color: #ff4081; }
+    }
+    @keyframes discoBallSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes discoLightPulse {
+      0%, 100% { box-shadow: 0 0 20px 5px rgba(255,255,255,0.8); }
+      50% { box-shadow: 0 0 40px 10px rgba(255,255,255,1); }
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at center, #222 0%, #000 80%);
+      color: #e0e0e0;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background:
+        linear-gradient(90deg, #444 25%, transparent 25%),
+        linear-gradient(0deg, #444 25%, transparent 25%);
+      background-size: 50px 50px;
+      background-position: 0 0, 25px 25px;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+    }
+    header {
+      background: rgba(31, 31, 31, 0.85);
+      padding: 20px;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    header h1,
+    header p {
+      animation: discoText 5s infinite linear;
+      margin: 0;
+    }
+    .disco-ball {
+      position: fixed;
+      top: 50px;
+      right: 50px;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle at center, #eee 30%, #999 70%);
+      border-radius: 50%;
+      box-shadow:
+        0 0 20px 5px rgba(255, 255, 255, 0.8);
+      animation: discoBallSpin 6s linear infinite, discoLightPulse 2s ease-in-out infinite;
+      z-index: 10;
+      background-image:
+        repeating-conic-gradient(
+          from 0deg,
+          #ccc 0deg 10deg,
+          #aaa 10deg 20deg
+        );
+      filter: drop-shadow(0 0 3px #fff);
+    }
+    .gallery,
+    .videos {
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      max-width: 1400px;
+      margin: auto;
+    }
+    .gallery img,
+    .videos video {
+      border-radius: 12px;
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+      background: #111;
+    }
+    .social-links {
+      text-align: center;
+      padding: 20px;
+      background: rgba(31, 31, 31, 0.85);
+      margin: 40px auto 0 auto;
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      border-radius: 12px;
+    }
+    .social-links h2 {
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+    .social-links a {
+      color: #e0e0e0;
+      margin: 0 15px;
+      font-size: 24px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+    .social-links a:hover {
+      color: #ff4081;
+    }
+    footer {
+      text-align: center;
+      background: rgba(31, 31, 31, 0.85);
+      color: #aaa;
+      padding: 15px;
+      margin-top: 20px;
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="disco-ball" aria-label="Bola disco giratoria"></div>
+
+  <header>
+    <h1>¡Bienvenidos a NandoDJEventos!</h1>
+    <p>Celebraciones, cumpleaños, fiestas inolvidables y sonido para bandas en vivo</p>
+  </header>
+
+  <section class="gallery">
+    <img src="assets/images/Para pag1.jpg" alt="Foto 1" />
+    <img src="assets/images/Para pag2.jpg" alt="Foto 2" />
+    <img src="assets/images/Para pag3.jpg" alt="Foto 3" />
+  </section>
+
+  <section class="videos">
+    <video controls>
+      <source src="assets/videos/Vid pag1.mp4" type="video/mp4" />
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    <video controls>
+      <source src="assets/videos/Vid pag2.mp4" type="video/mp4" />
+      Tu navegador no soporta la reproducción de video.
+    </video>
+    <video controls>
+      <source src="assets/videos/Vid pag3.mp4" type="video/mp4" />
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  </section>
+
+  <section class="social-links">
+    <h2>Seguinos en redes y contactanos</h2>
+    <a href="https://instagram.com/nandodjeventos_" target="_blank" rel="noopener" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a id="copyEmail" aria-label="Copiar email" title="Copiar correo" >
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://wa.me/5492255622656" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 NandoDJEventos. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById('copyEmail').addEventListener('click', function(e) {
+      e.preventDefault();
+      const email = 'contacto@eventosfiesta.com';
+      navigator.clipboard.writeText(email).then(() => {
+        alert('Correo copiado al portapapeles: ' + email);
+      }).catch(err => {
+        alert('No se pudo copiar el correo');
+        console.error(err);
+      });
+    });
+  </script>
+</body>
+</html>
