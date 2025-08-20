@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nando DJ Eventos | Sonido, Luces y Experiencias 360</title>
+  <meta name="description" content="Shows para fiestas y eventos: DJ profesional, cabezas móviles R9/R7, máquina de humo bajo, show láser, base 360, túnel pixel y espejo mágico. ¡Reservá tu fecha!">
+  <meta name="theme-color" content="#0f0f14">
+  <meta property="og:title" content="Nando DJ Eventos" />
+  <meta property="og:description" content="DJ + luces + efectos especiales para tu evento." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1485550409059-9afb054cada4?q=80&w=1600&auto=format&fit=crop" />
+  <meta property="og:locale" content="es_AR" />
+  <style>
+    :root{
+      --bg:#0b0b11;
+      --card:#12121b;
+      --muted:#a6a6b3;
+      --brand:#8a5cff;
+      --brand-2:#00e0ff;
+      --text:#f5f5fa;
+      --ok:#34c759;
+      --warn:#ffb300;
+      --danger:#ff375f;
+      --radius:14px;
+      --shadow: 0 20px 40px rgba(0,0,0,.35);
+      --glass: rgba(255,255,255,.06);
+      --border: 1px solid rgba(255,255,255,.09);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:radial-gradient(1200px 600px at 80% -10%, rgba(138,92,255,.15), transparent 60%), radial-gradient(800px 500px at -10% 0%, rgba(0,224,255,.12), transparent 60%), var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';}
+    a{color:inherit;text-decoration:none}
+    header{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:linear-gradient(180deg, rgba(11,11,17,.9), rgba(11,11,17,.55));z-index:10;border-bottom:var(--border)}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+    nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:10px;align-items:center;font-weight:700;letter-spacing:.3px}
+    .brand .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-2));box-shadow:0 0 20px rgba(138,92,255,.8)}
+    .navlinks{display:flex;gap:18px;font-size:14px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0b0b11;font-weight:700;box-shadow:var(--shadow);transition:.2s transform;}
+    .btn:hover{transform:translateY(-2px)}
+    .ghost{background:transparent;border:var(--border);color:var(--text);box-shadow:none}
+    .hero{padding:72px 0 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+    .hero h1{font-size:44px;line-height:1.08;margin:0 0 12px}
+    .hero p{margin:0 0 18px;color:var(--muted);font-size:18px}
+    .hero .pills{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 26px}
+    .pill{padding:8px 12px;border-radius:999px;background:var(--glass);border:var(--border);font-size:12px;color:#d6d6e6}
+    .hero-card{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.04));border:var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+    .hero-card img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;display:block;filter:saturate(1.1) contrast(1.05) brightness(.95)}
+    section{padding:56px 0}
+    h2{font-size:28px;margin:0 0 16px}
+    .muted{color:var(--muted)}
+    .grid{display:grid;gap:18px}
+    .grid-3{grid-template-columns:repeat(3,1fr)}
+    .grid-2{grid-template-columns:repeat(2,1fr)}
+    .card{background:var(--card);border:var(--border);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .svc{display:flex;gap:12px;align-items:flex-start}
+    .svc i{font-style:normal;font-weight:800;min-width:28px;text-align:center;background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+    .gallery img{width:100%;height:100%;aspect-ratio:1/1;object-fit:cover;border-radius:12px;border:var(--border)}
+    .pricing .card{display:flex;flex-direction:column;gap:10px}
+    .price{font-size:28px;font-weight:800;letter-spacing:.3px}
+    .small{font-size:12px;color:var(--muted)}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .badge{font-size:12px;padding:6px 10px;border-radius:999px;background:var(--glass);border:var(--border)}
+    .contact .card{padding:22px}
+    form{display:grid;gap:12px}
+    input,textarea,select{width:100%;padding:12px 14px;border-radius:12px;border:var(--border);background:rgba(255,255,255,.04);color:var(--text)}
+    textarea{min-height:120px;resize:vertical}
+    .footer{padding:32px 0;border-top:var(--border);color:#c9c9d6}
+    .handle{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:var(--glass);border:var(--border);font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-size:13px}
+    .note{font-size:12px;color:var(--muted)}
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+    }
+  </style>
+  <script>
+    function copyHandle(){
+      const txt='@NandoDjEventos';
+      navigator.clipboard.writeText(txt).then(()=>{
+        const el=document.getElementById('copynote');
+        el.textContent='Copiado ✓';
+        setTimeout(()=>el.textContent='Copiar',1500);
+      });
+    }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"EntertainmentBusiness",
+    "name":"Nando DJ Eventos",
+    "description":"DJ para fiestas y eventos con luces, efectos especiales y experiencias 360.",
+    "areaServed":"AR",
+    "sameAs":["https://instagram.com/NandoDjEventos"]
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav>
+        <div class="brand"><span class="dot"></span> Nando DJ Eventos</div>
+        <div class="navlinks">
+          <a href="#servicios">Servicios</a>
+          <a href="#galeria">Galería</a>
+          <a href="#paquetes">Paquetes</a>
+          <a href="#contacto">Contacto</a>
+          <a class="btn ghost" href="https://instagram.com/NandoDjEventos" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero" id="inicio">
+      <div>
+        <h1>Fiestas con energía, <br>luces y efectos que sorprenden</h1>
+        <p>DJ en vivo + iluminación profesional + experiencias interactivas. Ideal para casamientos, 15, egresos, corporativos y más.</p>
+        <div class="pills">
+          <span class="pill">Cabezas móviles R9 / R7</span>
+          <span class="pill">Máquina de humo bajo</span>
+          <span class="pill">Show láser</span>
+          <span class="pill">Base 360</span>
+          <span class="pill">Túnel pixel</span>
+          <span class="pill">Espejo mágico</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn" href="#contacto">Reservá tu fecha</a>
+          <a class="btn ghost" href="https://instagram.com/NandoDjEventos" target="_blank" rel="noopener">Ver reels</a>
+        </div>
+        <div class="badges">
+          <span class="badge">Eventos en toda Argentina</span>
+          <span class="badge">Armados a medida</span>
+          <span class="badge">Respuesta rápida</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img alt="Luces y DJ en evento" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1400&auto=format&fit=crop"/>
+      </div>
+    </section>
+
+    <section id="servicios">
+      <h2>Servicios</h2>
+      <p class="muted">Armamos el set ideal para tu evento. Podés combinar opciones:</p>
+      <div class="grid grid-3">
+        <div class="card svc">
+          <i>01</i>
+          <div>
+            <h3>DJ & Audio</h3>
+            <p class="muted">Musicalización en vivo, micrófonos, cabina y sonido equilibrado para pista y livings.</p>
+          </div>
+        </div>
+        <div class="card svc">
+          <i>02</i>
+          <div>
+            <h3>Cabezas móviles R9 / R7</h3>
+            <p class="muted">Beams potentes, gobos y movimientos precisos para un show con impacto.</p>
+          </div>
+        </div>
+        <div class="card svc">
+          <i>03</i>
+          <div>
+            <h3>Máquina de humo bajo</h3>
+            <p class="muted">Efecto “nube” para aperturas, vals y momentos especiales.</p>
+          </div>
+        </div>
+        <div class="card svc">
+          <i>04</i>
+          <div>
+            <h3>Show láser</h3>
+            <p class="muted">Trazos y figuras láser sincronizadas con la música.</p>
+          </div>
+        </div>
+        <div class="card svc">
+          <i>05</i>
+          <div>
+            <h3>Base 360</h3>
+            <p class="muted">Plataforma giratoria para videos estilo reel, con iluminación y overlay.</p>
+          </div>
+        </div>
+        <div class="card svc">
+          <i>06</i>
+          <div>
+            <h3>Túnel pixel</h3>
+            <p class="muted">Ingreso épico con luces LED direccionables para entradas y fotos.</p>
+          </div>
+        </div>
+        <div class="card svc">
+          <i>07</i>
+          <div>
+            <h3>Espejo mágico</h3>
+            <p class="muted">Foto-booth interactivo con accesorios y entrega digital.</p>
+          </div>
+        </div>
+        <div class="card svc">
+          <i>08</i>
+          <div>
+            <h3>Iluminación ambiente</h3>
+            <p class="muted">Par LED, tiras y efectos para ambientar salones y livings.</p>
+          </div>
+        </div>
+        <div class="card svc">
+          <i>09</i>
+          <div>
+            <h3>Operación técnica</h3>
+            <p class="muted">Técnicos en sala para montaje, seguridad y control en vivo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria">
+      <h2>Galería</h2>
+      <p class="muted">Algunas vibes de nuestros montajes (podés reemplazar por tus fotos):</p>
+      <div class="gallery">
+        <img alt="Evento 1" src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?q=80&w=800&auto=format&fit=crop"/>
+        <img alt="Evento 2" src="https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?q=80&w=800&auto=format&fit=crop"/>
+        <img alt="Evento 3" src="https://images.unsplash.com/photo-1514517220031-f8a9bf0c7e6a?q=80&w=800&auto=format&fit=crop"/>
+        <img alt="Evento 4" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800&auto=format&fit=crop"/>
+        <img alt="Evento 5" src="https://images.unsplash.com/photo-1512198768248-6e4b7f9a2c4b?q=80&w=800&auto=format&fit=crop"/>
+        <img alt="Evento 6" src="https://images.unsplash.com/photo-1464375117522-1311d6a5b81a?q=80&w=800&auto=format&fit=crop"/>
+        <img alt="Evento 7" src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?q=80&w=800&auto=format&fit=crop"/>
+        <img alt="Evento 8" src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=800&auto=format&fit=crop"/>
+      </div>
+    </section>
+
+    <section id="paquetes" class="pricing">
+      <h2>Paquetes orientativos</h2>
+      <p class="muted">Podemos ajustar cualquiera a tu espacio, cantidad de invitados y presupuesto.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <h3>Esencial</h3>
+          <div class="small">Para fiestas chicas y cumpleaños</div>
+          <ul>
+            <li>DJ + sonido</li>
+            <li>2 cabezas móviles R7</li>
+            <li>Iluminación básica</li>
+          </ul>
+          <div class="small">Desde</div>
+          <div class="price">$</div>
+          <a class="btn" href="#contacto">Consultar</a>
+        </div>
+        <div class="card">
+          <h3>Full Party</h3>
+          <div class="small">Ideal 15 / casamientos</div>
+          <ul>
+            <li>DJ + sonido + micrófonos</li>
+            <li>4 cabezas móviles (R9/R7)</li>
+            <li>Humo bajo + show láser</li>
+            <li>Iluminación ambiente</li>
+          </ul>
+          <div class="small">Desde</div>
+          <div class="price">$$</div>
+          <a class="btn" href="#contacto">Reservar</a>
+        </div>
+        <div class="card">
+          <h3>Experiencia 360</h3>
+          <div class="small">Completa e interactiva</div>
+          <ul>
+            <li>Todo lo del Full</li>
+            <li>Base 360 + túnel pixel</li>
+            <li>Espejo mágico</li>
+            <li>Operación técnica completa</li>
+          </ul>
+          <div class="small">Desde</div>
+          <div class="price">$$$</div>
+          <a class="btn" href="#contacto">Agendar visita</a>
+        </div>
+      </div>
+      <p class="note">*Los precios exactos se confirman por fecha, ciudad y requerimientos técnicos.</p>
+    </section>
+
+    <section id="contacto" class="contact">
+      <h2>Contacto</h2>
+      <div class="grid grid-2">
+        <div class="card">
+          <h3>Hablemos de tu evento</h3>
+          <p class="muted">Completá el formulario y te respondemos a la brevedad. También podés escribirnos por Instagram.</p>
+          <form action="mailto:TU-EMAIL@TU-DOMINIO.COM" method="post" enctype="text/plain">
+            <input name="Nombre" placeholder="Tu nombre" required />
+            <input name="Email" type="email" placeholder="Tu email" required />
+            <input name="Fecha" type="date" placeholder="Fecha del evento" />
+            <select name="Tipo">
+              <option value="">Tipo de evento</option>
+              <option>Casamiento</option>
+              <option>Quince</option>
+              <option>Egreso</option>
+              <option>Corporativo</option>
+              <option>Otro</option>
+            </select>
+            <textarea name="Mensaje" placeholder="Contanos cantidad de invitados, ciudad, y qué servicios te interesan"></textarea>
+            <button class="btn" type="submit">Enviar consulta</button>
+          </form>
+          <p class="note">Podés reemplazar el <code>mailto:</code> por tu WhatsApp o backend cuando lo tengas.</p>
+        </div>
+        <div class="card">
+          <h3>Redes</h3>
+          <p>Seguinos y mirá reels de montajes:</p>
+          <p class="handle">@NandoDjEventos <button class="btn ghost" id="copynote" onclick="copyHandle()">Copiar</button></p>
+          <div class="cta-row">
+            <a class="btn" href="https://instagram.com/NandoDjEventos" target="_blank" rel="noopener">Abrir Instagram</a>
+            <a class="btn ghost" href="#galeria">Ver galería</a>
+          </div>
+          <p class="note">¿Querés WhatsApp directo? Cambiá el botón por <code>https://wa.me/549XXXXXXXXX</code></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="wrap footer">
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+      <span>© <script>document.write(new Date().getFullYear())</script> Nando DJ Eventos</span>
+      <span>Diseño web simple y rápido • Argentina</span>
+    </div>
+  </div>
+</body>
+</html>
